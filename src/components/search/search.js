@@ -1,7 +1,23 @@
-// This uses the async-paginate package
+import { useState } from "react";
+import { AsyncPaginate } from "react-select-async-paginate";
 
-const Search = () => {
-  return ("Hello")
+const Search = ({onSearchChange}) => {
+  
+  const[search, setSearch] = useState(null);
+  
+  const handleOnChange = (searchData) => {
+    setSearch(searchData);
+    onSearchChange(searchData);
+  }
+
+  return (
+    <AsyncPaginate
+      placeholder="Search"
+      debounceTimeout={600}
+      value={search}
+      onChange={handleOnChange}
+    />
+  )
 }
 
 export default Search
