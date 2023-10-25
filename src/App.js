@@ -9,8 +9,14 @@ function App() {
   
   return (
     <div className="container">
-      <Search onSearchChange={handleOnSearchChange}/>
+      <Search onSearchChange={handleOnSearchChange} />
+      
+
+
+      
     </div>
+    
+    
   );
 }
 
